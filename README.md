@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/nahidtopalovic/library_api/blob/main/media/IOS/IOS_show_off.gif" height="400" />
+  <img src="media/IOS/IOS_show_off.gif" height="400" />
 </p>
 
 # CLUBLIT! :books:
@@ -36,7 +36,7 @@ __Note:__ Not all features are available in the current release. This platform i
 
 ## System Architecture
 <p align="center">
-  <img src="https://github.com/nahidtopalovic/library_api/blob/main/media/architecture/cloud-clublit.png" />
+  <img src="media/architecture/cloud-clublit.png" />
 </p>
 The front-end serves as a seamless user interface for IOS 14 and android (planned in a future release).
 The backend is a REST-based service interface for CRUD operations (for example, data query of books, user sign up & login, POST, PUT) deployed via Elastic Beanstalk to AWS to facilitate scalable performance and Microsoft Azure as well as Heroku. The node server interacts with Google Books API. Furthermore, our system uses a NoSQL external Cloud database (MongoDB) to securely store our community user information (salted and hashed). 
@@ -295,4 +295,5 @@ npm start
 You may be asked to install further dependencies to run the IOS simulator ([Xcode](https://developer.apple.com/xcode/) required) or android emulator. 
 
 <!-- ### Disclaimer -->
-_Disclaimer: This project is part of a cloud computing coursework taught by [Dr. Sukhpal Singh Gill](https://github.com/iamssgill) and [Ignacio De Castro Arribas](https://www.linkedin.com/in/ignacio-de-castro-arribas-44a48117) at the Queen Mary University of London Electrical Engineering & Computer Science Department to create a prototype of a cloud application._
+###### Disclaimer
+This project is part of a cloud computing coursework taught by [Dr. Sukhpal Singh Gill](https://github.com/iamssgill) and [Ignacio De Castro Arribas](https://www.linkedin.com/in/ignacio-de-castro-arribas-44a48117) at the Queen Mary University of London Electrical Engineering & Computer Science Department to create a prototype of a cloud application._
