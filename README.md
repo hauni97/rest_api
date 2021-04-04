@@ -32,7 +32,7 @@ CLUBLIT! is a drop-in-audio social media for book lovers and a platform that uni
 We bring great minds together to discuss and share their reading experiences through co-reading, live readings, and online audio events. 
 Our app assists you with the search for new potential reads and creates your customized wish lists. 
 
-__Note:__ Not all features are available in the current release. This platform is developed in stages; the first and current version of the MVP (minimum viable product) demonstrates a backend developed in Node.js with CRUD operations for user accounts stored on a cloud-based MongoDB. Interaction with the external Google API REST service is used for querying book information allowing this information to be added to user's accounts. Concerning security mechanisms, the users' information follows salted and hash-based authentication. Furthermore, all our current cloud deployments have an RSA TLS (Azure) and SHA2 (Heroku) signed HTTPS certificate. Our ``https`` branch in this repository contains a self-signed HTTPS certificate for local deployments. 
+__Note:__ Not all features are available in the current release. This platform is developed in stages; the first and current version of the MVP (minimum viable product) demonstrates a backend developed in Node.js with CRUD operations for user accounts stored on a cloud-based MongoDB. Interaction with the external Google API REST service is used for querying book information allowing this information to be added to user's accounts. Concerning security mechanisms, the users' information follows salted and hash-based authentication. Furthermore, all our current cloud deployments have an RSA TLS (Azure) and SHA2 (Heroku) signed HTTPS certificate. For a local SSL deployment see [Running Locally](#running-locally). 
 
 ## System Architecture
 <p align="center">
@@ -192,6 +192,19 @@ NOTE: It is advisable to use [Postman](https://www.postman.com/) for CRUD operat
 ### Running Locally
 To run this repository on your local machine download the source code and extract its contents or clone the repository.
 We provide you with a few options shipped with this repository. 
+
+For a local SSL connection you may generate your own certificate into the root directory ``openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365`` of the repository and add the following code into the index.js file:
+```
+//This enables https
+
+const https = require("https");
+const fs = require("fs");
+
+const options = {
+    key: fs.readFileSync("key.pem"),
+    cert: fs.readFileSync("cert.pem")
+  };
+  ```
 
 **Option 1:**  Starting a local server with your node.js installation running in **version 14.13.0**.  
 
