@@ -1,3 +1,0 @@
-services:
-  redis-commander:
-    build: https://hub.docker.com/r/hauni97/clublit_library_api_app
